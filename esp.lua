@@ -1,4 +1,4 @@
-gui.Name = "Cracked esp";
+gui.Name = "Cracked esp"; ---- properties of the esp
 gui.ResetOnSpawn = false
 gui.AlwaysOnTop = true;
 gui.LightInfluence = 0;
@@ -11,11 +11,11 @@ esp.BorderColor3 = Color3.new(esp_settings.colour)
 esp.BorderSizePixel = 0
 esp.Font = "GothamSemibold"
 esp.TextSize = esp_settings.textsize
-esp.TextColor3 = Color3.fromRGB(esp_settings.colour) 
+esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
  
-game:GetService("RunService").RenderStepped:Connect(function() 
+game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
     for i,v in pairs (game:GetService("Players"):GetPlayers()) do
-        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then 
+        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
             esp.Text = "{"..v.Name.."}"
             gui:Clone().Parent = v.Character.Head
     end
